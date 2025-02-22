@@ -87,10 +87,15 @@ WHERE year BETWEEN 2000 AND 2009
 GROUP BY name, year
 ORDER BY total DESC;
 
-
-
 -- 10. Which year had the most variety in names
 -- (i.e. had the most distinct names)?
+
+SELECT COUNT(DISTINCT name) AS name_count, year
+FROM names
+GROUP BY year
+ORDER BY name_count DESC
+LIMIT 1;
+
 
 
 -- 11. What is the most popular name for a girl that starts with the letter X?
